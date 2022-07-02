@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
     <meta name="description" content="" />
     <meta name="author" content="" />
 
@@ -15,18 +15,26 @@
 
     <!-- Custom Fonts -->
     <link
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      href="assets/font-awesome.min.css?display=swap"
       rel="stylesheet"
       type="text/css"
     />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css" />
     <link
-      href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic"
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"
       rel="stylesheet"
       type="text/css"
     />
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <!-- Theme CSS -->
     <style>
@@ -1123,7 +1131,13 @@
               </li>
               <li class="timeline-inverted">
                 <div class="timeline-image">
-                  <img class="img-circle img-responsive" width="156" height="156" src="images/investimento.webp" alt="" />
+                  <img
+                    class="img-circle img-responsive"
+                    width="156"
+                    height="156"
+                    src="images/investimento.webp"
+                    alt=""
+                  />
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
@@ -2301,7 +2315,7 @@
             }
             $.ajax({
               url: (shouldFail = !shouldFail) // alterna entre falha e sucesso da submissão do contato
-                ? 'https://run.mocky.io/v3/9f2a669c-e0d8-463c-bcb1-ada3004d94e6'  // sucesso na submissão
+                ? 'https://run.mocky.io/v3/9f2a669c-e0d8-463c-bcb1-ada3004d94e6' // sucesso na submissão
                 : 'https://run.mocky.io/v3/723e9027-4fe2-4697-8198-902e2123d854', // falha na submissão
               type: 'POST',
               data: {
