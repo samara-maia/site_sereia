@@ -14,11 +14,7 @@
     <link href="assets/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Custom Fonts -->
-    <link
-      href="assets/font-awesome.min.css?display=swap"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <link href="assets/font-awesome.min.css?display=swap" rel="stylesheet" type="text/css" />
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"
       rel="stylesheet"
@@ -1305,6 +1301,17 @@
                     />
                     <p class="help-block text-danger"></p>
                   </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="ENDEREÇO *"
+                      id="address"
+                      required
+                      data-validation-required-message="Seu endereço completo."
+                    />
+                    <p class="help-block text-danger"></p>
+                  </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
@@ -2307,6 +2314,7 @@
             var name = $('input#name').val();
             var email = $('input#email').val();
             var phone = $('input#phone').val();
+            var address = $('input#address').val();
             var message = $('textarea#message').val();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
@@ -2319,10 +2327,11 @@
                 : 'https://run.mocky.io/v3/723e9027-4fe2-4697-8198-902e2123d854', // falha na submissão
               type: 'POST',
               data: {
-                name: name,
-                phone: phone,
-                email: email,
-                message: message,
+                name,
+                phone,
+                email,
+                address,
+                message,
               },
               cache: false,
               success: function () {
