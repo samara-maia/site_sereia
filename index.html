@@ -904,11 +904,11 @@
       img::-moz-selection {
         background: transparent;
       }
-
+/*
       body {
         webkit-tap-highlight-color: #fed136;
       }
-
+*/
       #call-me-baby {
         position: fixed;
         bottom: 20px;
@@ -2374,6 +2374,8 @@
         });
       });
 
+      
+
       /*When clicking on Full hide fail/success boxes */
       $('#name').focus(function () {
         $('#success').html('');
@@ -2426,6 +2428,59 @@
           apareceuem: new Date().getTime(),
         });
       }, 5000);
+
+      // exercicio 1
+      document.addEventListener('scroll', function (event) {
+        var alturaAtual = Math.round(window.scrollY + document.documentElement.clientHeight);
+        var alturaTotal = Math.max(
+          document.body.scrollHeight, document.documentElement.scrollHeight,
+          document.body.offsetHeight, document.documentElement.offsetHeight,
+          document.body.clientHeight, document.documentElement.clientHeight
+        );
+        if (alturaAtual == alturaTotal) { console.log('>>> Fim da Página') }
+      });
+      //execicio 2
+        var tender = document.querySelector('a.page-scroll.btn.btn-xl')
+        tender.addEventListener('click', function( ){
+          console.log('Clicou em FAÇA UM ORÇAMENTO')
+        });
+        //Exercício 3
+       var Observer = new IntersectionObserver(function(entries){
+        if (entries[0].isIntersecting == true){
+          console.log('Visualizou FALE COM UM ATENDENTE');
+        }
+      });
+        Observer.observe(document.querySelector('#call-me-baby'))
+      // Exercicio 4 // Exercicio 5
+      var form = document.getElementById('contactForm');
+      form.addEventListener('change', function(ev){
+        var inputTarget = ev.target;
+        var inputName = inputTarget.getAttribute('id');
+        //validação email
+        if(!inputTarget.preenchido && inputTarget.getAttribute('aria-invalid') !== 'true'){
+          console.log('Preencheu campo' + inputName);
+          inputTarget.preenchido = true;
+        }
+        var todosPreenchidos = ['email', 'name', 'phone', 'message', 'address'].every(function(inputId){
+          return document.getElementById(inputId).preenchido;
+        });
+        if (!todosPreenchidos && todosPreenchidos){
+          console.log('Preemcheu todo o formulário');
+        }
+      });
+       //execicio 6
+        var menuArea = document.querySelector('ul.nav.navbar-nav.navbar-right');
+        menuArea.addEventListener('click', function (e) {
+        console.log('Clicou no menu', e.target.innerText);// mostrar em qual dos menus que se clicar.
+        });
+
+        // Exercicio 7
+      var banheiroObserver = new IntersectionObserver(function(entries){
+        if (entries[0].isIntersecting == true){
+          console.log('Visualizou o banheiro');
+        }
+      })
+      banheiroObserver.observe(document.querySelector('#about > div > div:nth-child(2) > div > ul > li:nth-child(1) > div.timeline-image > img'))
     </script>
   </body>
 </html>
